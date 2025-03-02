@@ -89,3 +89,13 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.9/site-packages/kombu/connection.py", line 476, in _reraise_as_library_errors
     raise ConnectionError(str(exc)) from exc
 kombu.exceptions.OperationalError: No master found for 'mymaster' : Redis<ConnectionPool<Connection<host=redis-headless,port=26379,db=0>>> - ConnectionError('Error 111 connecting to redis-headless:26379. Connection refused.')
+
+
+
+
+[2025-03-02T17:48:01.344+0000] {scheduler_job_runner.py:733} INFO - TaskInstance Finished: dag_id=dag_1, task_id=hello_world_group.task_17, run_id=manual__2025-03-02T17:47:30.099955+00:00, map_index=-1, run_start_date=None, run_end_date=None, run_duration=None, state=queued, executor_state=failed, try_number=1, max_tries=0, job_id=None, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2025-03-02 17:47:55.221829+00:00, queued_by_job_id=6898, pid=None
+[2025-03-02T17:48:01.345+0000] {task_context_logger.py:91} ERROR - Executor reports task instance <TaskInstance: dag_1.hello_world_group.task_17 manual__2025-03-02T17:47:30.099955+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?
+Changing /home/airflow/logs/dag_id=dag_1/run_id=manual__2025-03-02T17:47:30.099955+00:00/task_id=hello_world_group.task_17 permission to 509
+[2025-03-02T17:48:01.355+0000] {base.py:83} INFO - Using connection ID 'rp_sg_s3_log_conn_dev' for task execution.
+[2025-03-02T17:48:01.356+0000] {connection_wrapper.py:382} INFO - AWS Connection (conn_id='rp_sg_s3_log_conn_dev', conn_type='aws') credentials retrieved from login and password.
+[2025-03-02T17:48:01.580+0000] {taskinstance.py:2730} ERROR - Executor reports task instance <TaskInstance: dag_1.hello_world_group.task_17 manual__2025-03-02T17:47:30.099955+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?
